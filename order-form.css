@@ -1,0 +1,105 @@
+.order-form {
+    background-color: white;
+    padding: 16px;
+    border-radius: 8px;
+    font-family: sans-serif;
+    font-size: 14px;
+    color: #111;
+}
+
+.order-form .block-title {
+    font-weight: 500;
+    color: #222;
+    margin-bottom: 8px;
+}
+
+.order-form .cart-items {
+    margin-bottom: 16px;
+    color: #555;
+    font-size: 13px;
+}
+
+.order-form .cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.order-form .cart-item .name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 8px;
+    flex: 1;
+}
+
+.order-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.order-form .input-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.order-form input[type='tel'] {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    min-width: 160px;
+}
+
+.order-form input[type='tel'].error {
+    border-color: #e53935;
+}
+
+.order-form .submit-btn {
+    padding: 8px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+    min-width: 100px;
+}
+
+.order-form .submit-btn:hover {
+    background-color: #444;
+}
+
+.order-form .submit-btn:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
+.order-form .error-message {
+    font-size: 12px;
+    color: #e53935;
+}
+
+@media (max-width: 768px) {
+    .order-form {
+        padding: 12px;
+    }
+
+    .order-form .input-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .order-form input[type='tel'],
+    .order-form .submit-btn {
+        width: 100%;
+    }
+}
