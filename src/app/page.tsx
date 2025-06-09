@@ -18,7 +18,7 @@ export default function Home() {
   const [error, setError] = useState<string | null>(null);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
 
-  const { cart, addToCart, getTotalItems, clearCart } = useCart();
+  const { cart, addToCart, clearCart } = useCart();
 
   const loadProducts = useCallback(async (pageNum: number, reset = false) => {
     if (loading) return;
@@ -36,7 +36,7 @@ export default function Home() {
       }
 
       setHasMore(response.items.length === 20 && products.length + response.items.length < response.total);
-    } catch (err) {
+    } catch {
       setError('Ошибка загрузки товаров');
     } finally {
       setLoading(false);
@@ -145,7 +145,6 @@ export default function Home() {
             <div style={{ position: 'sticky', top: '96px' }}>
               <OrderForm
                 cart={cart}
-                totalItems={getTotalItems()}
                 products={products}
                 onOrderSuccess={handleOrderSuccess}
               />

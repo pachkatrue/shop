@@ -9,14 +9,12 @@ import './order-form.css';
 
 interface OrderFormProps {
   cart: CartItem[];
-  totalItems: number;
   products: Product[];
   onOrderSuccess: () => void;
 }
 
 export const OrderForm: React.FC<OrderFormProps> = ({
                                                       cart,
-                                                      totalItems,
                                                       products,
                                                       onOrderSuccess
                                                     }) => {
@@ -62,7 +60,7 @@ export const OrderForm: React.FC<OrderFormProps> = ({
       } else {
         setError(response.error || 'Ошибка при оформлении заказа');
       }
-    } catch (err) {
+    } catch {
       setError('Ошибка подключения к серверу');
     } finally {
       setLoading(false);

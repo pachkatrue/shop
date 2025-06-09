@@ -15,7 +15,7 @@ export const Reviews: React.FC = () => {
       try {
         const reviewsData = await api.getReviews();
         setReviews(reviewsData);
-      } catch (err) {
+      } catch {
         setError('Ошибка загрузки отзывов');
       } finally {
         setLoading(false);
@@ -48,7 +48,7 @@ export const Reviews: React.FC = () => {
 
   return (
     <div className="reviews-container">
-      {reviews.map((review, index) => (
+      {reviews.map((review /*, index*/) => (
         <div key={review.id} className="review-card">
           {/*<div className="meta">Отзыв {index + 1}</div>*/}
           {/*<div className="meta">Полученный с api</div>*/}
